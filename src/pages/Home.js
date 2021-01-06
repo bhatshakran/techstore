@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import comp from '../images/a.jpg';
 import ear from '../images/b.jpeg';
 import tech from '../images/c.jpg';
+import Footer from '../components/Footer';
 
 export default function Home() {
 	return (
@@ -24,6 +25,7 @@ export default function Home() {
 									<img src={ear} alt='' className='b' />
 								</div>
 							</div>
+							<Footer />
 						</HomeWrapper>
 					);
 				}}
@@ -34,6 +36,9 @@ export default function Home() {
 
 const HomeWrapper = styled.section`
 	width: 100%;
+	position: relative;
+	top: 70px;
+
 	.banner {
 		width: 100%;
 		height: 300px;
@@ -44,18 +49,18 @@ const HomeWrapper = styled.section`
 	}
 	.banner h2 {
 		width: calc(100% - 4rem);
+		height: 50px;
 		margin: 1rem 2rem;
 		font-size: 1.5rem;
 		padding: 1rem;
 		font-family: 'Bungee';
-		color: orange;
+		color: black;
 		text-align: center;
 		border: 3px solid #f2a3bd;
 		text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 	}
 	.banner2 {
 		width: calc(100% - 2rem);
-		// background: #e0218a;
 		margin: 3rem 1rem;
 	}
 	.banner2 .images {
@@ -74,7 +79,4 @@ const HomeWrapper = styled.section`
 		width: 100%;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3), 0px -4px 4px rgba(0, 0, 0, 0.3);
 	}
-	// .b {
-	// 	grid-row: 1/3;
-	// }
 `;

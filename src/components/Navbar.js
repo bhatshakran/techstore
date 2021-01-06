@@ -50,6 +50,8 @@ export default function Navbar() {
 
 const NavWrapper = styled.nav`
 	width: 100%;
+	position: fixed;
+	top: 0;
 	height: 70px;
 	padding: 0 !important;
 	background: white;
@@ -60,6 +62,7 @@ const NavWrapper = styled.nav`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	z-index: 9999;
 	.nav-bran {
 		font-size: 2rem;
 		font-family: 'Bungee';
