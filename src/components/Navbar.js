@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FaHamburger, FaCartPlus } from 'react-icons/fa';
+import { FaBars, FaCartPlus } from 'react-icons/fa';
 import { ProductConsumer } from '../context';
 import { motion } from 'framer-motion';
 import AOS from 'aos';
@@ -31,20 +31,13 @@ export default function Navbar() {
 				const { cartItems, handleSidebar, handleCart } = value;
 				return (
 					<NavWrapper data-aos='fade-down'>
-						<motion.div
-							variants={iconVariant}
-							whileHover='hover'
-							animate='visible'>
-							<FaHamburger className='nav-icon' onClick={handleSidebar} />
+						<motion.div>
+							<FaBars className='nav-icon' onClick={handleSidebar} />
 						</motion.div>
 						<div className='nav-bran'>
 							Tech <span>Buddy</span>{' '}
 						</div>
-						<motion.div
-							variants={iconVariant}
-							whileHover='hover'
-							animate='visible'
-							className='nav-icon'>
+						<motion.div className='nav-icon'>
 							<FaCartPlus onClick={handleCart} />
 							<p>{cartItems}</p>
 						</motion.div>
@@ -57,13 +50,10 @@ export default function Navbar() {
 
 const NavWrapper = styled.nav`
 	width: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	margin: 0;
+	height: 70px;
 	padding: 0 !important;
 	background: white;
-	padding: 2rem !important;
+	padding: 2rem 0.8rem !important;
 	color: black;
 	font-size: 3rem;
 	font-family: 'Poppins';
@@ -71,14 +61,14 @@ const NavWrapper = styled.nav`
 	align-items: center;
 	justify-content: center;
 	.nav-bran {
-		font-size: 4rem;
+		font-size: 2rem;
 		font-family: 'Bungee';
 		margin: 0 auto;
 		color: black;
 		text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.7);
 	}
 	.nav-icon {
-		margin: 0 4rem;
+		margin: 0 1rem;
 		font-size: 3rem;
 		cursor: pointer;
 		position: relative;
@@ -97,10 +87,5 @@ const NavWrapper = styled.nav`
 	span {
 		color: orange;
 		text-shadow: none;
-	}
-	@media screen and (max-width: 800px) {
-		.nav-bran {
-			font-size: 2rem;
-		}
 	}
 `;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { ProductConsumer } from '../context';
-import heroPic from '../pexels-garrett-morrow-682933.jpg';
+import heroPic from '../images/pexels-sound-on-3756853.jpg';
 import styled from 'styled-components';
-import watch from '../ssss.png';
-import airpod from '../airpod.png';
-import iphone from '../iphone-.png';
+import comp from '../images/a.jpg';
+import ear from '../images/b.jpeg';
+import tech from '../images/c.jpg';
 
 export default function Home() {
 	return (
@@ -14,13 +14,14 @@ export default function Home() {
 					return (
 						<HomeWrapper>
 							<div className='banner'>
+								<img src={heroPic} alt='' />
 								<h2>Cool Gadgets and Techy stuff</h2>
 							</div>
 							<div className='banner2'>
 								<div className='images'>
-									<img src={watch} alt='' className='a' />
-									<img src={airpod} alt='' className='b' />
-									<img src={iphone} alt='' className='c' />
+									<img src={comp} alt='' className='a' />
+									<img src={tech} alt='' className='c' />
+									<img src={ear} alt='' className='b' />
 								</div>
 							</div>
 						</HomeWrapper>
@@ -32,96 +33,48 @@ export default function Home() {
 }
 
 const HomeWrapper = styled.section`
-	height: 100vh;
-	background: url(${heroPic});
-	background-size: cover;
-	background-position: center;
-	overflow: hidden;
-
-	.container {
-		position: relative;
-		background: rgba(0, 0, 0, 0.3);
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-	}
+	width: 100%;
 	.banner {
-		padding: 2rem;
-		color: orange;
-		background: black;
-		text-align: center;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		transform: skew(0, -30deg);
-		position: absolute;
-		bottom: -150px;
-		right: -160px;
-		height: 600px;
-		width: 800px;
-		z-index: 1;
+		width: 100%;
+		height: 300px;
+	}
+	.banner img {
+		width: 100%;
+		height: 250px;
 	}
 	.banner h2 {
+		width: calc(100% - 2rem);
+		margin: 1rem 1rem;
+		font-size: 1.5rem;
+		padding: 1rem;
 		font-family: 'Bungee';
-		font-size: 6rem;
-		margin: 12rem;
+		color: orange;
+		text-align: center;
+		border: 3px solid #f2a3bd;
+		text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 	}
 	.banner2 {
-		position: absolute;
-		bottom: 0;
-		height: 600px;
-		width: 800px;
-		transform: skew(0, 30deg);
-		background: white;
-		bottom: -150px;
-		left: -160px;
-		padding: 4rem;
-		display: flex;
-		align-item: center;
-		justify-content: center;
-		z-index: 1;
+		width: calc(100% - 2rem);
+		// background: #e0218a;
+		margin: 3rem 1rem;
 	}
-	.images {
+	.banner2 .images {
+		padding: 1rem;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-		margin: 2rem;
-		height: 400px;
-		transform: skew(0, -20deg);
+		grid-template-columns: repeat(1, 100%);
+		grid-template-rows: repeat(3, 180px);
+		grid-column-gap: 10%;
+		grid-row-gap: 10px;
+		justify-content: center;
+		align-items: center;
 	}
-	img {
+	.banner2 img {
+		background: #0000aa;
 		height: 100%;
+		width: 100%;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3), 0px -4px 4px rgba(0, 0, 0, 0.3);
 	}
-	.a,
-	.b {
-		grid-row-start: 1;
-		grid-row-end: 2;
-	}
-
-	.c {
-		grid-row-start: 2;
-		grid-row-end: 3;
-		grid-column-start: 1;
-		grid-column-end: 3;
-	}
-	@media screen and (max-width: 1300px) {
-		.banner {
-			background: none;
-			height: 200px;
-			width: 200px;
-			position: absolute;
-			bottom: 50%;
-			right: 50%;
-			transform: skew(0, 0);
-			color: #fff;
-			padding: 0;
-			margin: 0;
-		}
-		.banner h2 {
-			font-size: 5rem;
-			letter-spacing: 5px;
-		}
-		.banner2 {
-			display: none;
-		}
-	}
+	// .b {
+	// 	grid-row: 1/3;
+	// }
 `;

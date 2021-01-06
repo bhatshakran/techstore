@@ -55,8 +55,7 @@ export default About;
 const AboutWrap = styled.div`
 	width: 100%;
 	height: 100%;
-	position: relative;
-	top: 80px;
+	overflow: auto;
 	.about-banner {
 		width: 100%;
 		height: 200px;

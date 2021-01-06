@@ -54,10 +54,11 @@ const Sidebar = () => {
 export default Sidebar;
 
 const SideWrapper = styled.section`
-	position: fixed;
-	top: 81px;
+	position: absolute;
+	top: 70px;
+	width: 100%;
 	left: 0;
-	background: transparent;
+	background: white;
 	padding: 1rem;
 	z-index: 999;
 	transform: ${props => (props.show ? 'translateX(0)' : 'translateX(-100%)')};
@@ -71,11 +72,11 @@ const SideWrapper = styled.section`
 	li {
 		padding: 1rem;
 		text-transform: capitalize;
-		font-size: 3rem;
+		font-size: 2rem;
 		list-style-type: none;
 	}
 	a {
 		text-decoration: none;
-		color: #fff;
+		color: black;
 	}
 `;
