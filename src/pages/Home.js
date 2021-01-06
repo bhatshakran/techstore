@@ -43,8 +43,8 @@ const HomeWrapper = styled.section`
 		height: 250px;
 	}
 	.banner h2 {
-		width: calc(100% - 2rem);
-		margin: 1rem 1rem;
+		width: calc(100% - 4rem);
+		margin: 1rem 2rem;
 		font-size: 1.5rem;
 		padding: 1rem;
 		font-family: 'Bungee';
