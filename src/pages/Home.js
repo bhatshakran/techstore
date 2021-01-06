@@ -3,7 +3,7 @@ import { ProductConsumer } from '../context';
 import heroPic from '../images/pexels-sound-on-3756853.jpg';
 import styled from 'styled-components';
 import comp from '../images/a.jpg';
-import ear from '../images/b.jpeg';
+import ear from '../images/b.jpg';
 import tech from '../images/c.jpg';
 import Footer from '../components/Footer';
 
@@ -78,5 +78,38 @@ const HomeWrapper = styled.section`
 		height: 100%;
 		width: 100%;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3), 0px -4px 4px rgba(0, 0, 0, 0.3);
+	}
+	@media screen and (min-width: 500px) {
+		.banner {
+			height: 400px;
+		}
+		.banner img {
+			height: 350px;
+		}
+		.banner2 .images {
+			grid-template-rows: repeat(3, 250px);
+		}
+	}
+	@media screen and (min-width: 750px) {
+		.banner {
+			height: 950px;
+		}
+		.banner img {
+			height: 90%;
+		}
+		.banner h2 {
+			width: 70%;
+			margin: 3rem auto;
+			font-size: 2.5rem;
+			padding: 1rem;
+		}
+		.banner2 .images {
+			grid-template-columns: repeat(2, 38%);
+			grid-template-rows: repeat(2, 300px);
+			grid-column-gap: 1rem;
+		}
+		.b {
+			grid-row: 1/3;
+		}
 	}
 `;
