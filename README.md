@@ -1,1 +1,1 @@
-Live on techbuddy.netlify.app
+Live on https://techbuddy.netlify.app
