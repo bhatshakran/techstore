@@ -85,10 +85,10 @@ const AboutWrap = styled.div`
 		line-height: 23px;
 	}
 	.social-follow {
-		margin-top: 4rem;
-		position: absolute;
-		top: 100%;
-		width: 100%;
+		margin-top: 1rem;
+		// position: absolute;
+		// top: 100%;
+		// width: 100%;
 		text-align: center;
 		display: flex;
 		flex-direction: column;
