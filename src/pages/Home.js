@@ -90,9 +90,27 @@ const HomeWrapper = styled.section`
 			grid-template-rows: repeat(3, 250px);
 		}
 	}
-	@media screen and (min-width: 750px) {
+	// ipad
+	@media screen and (min-width: 700px) {
 		.banner {
-			height: 950px;
+			height: 700px;
+		}
+		.banner img {
+			height: 90%;
+		}
+		.banner2 .images {
+			grid-template-columns: repeat(2, 38%);
+			grid-template-rows: repeat(2, 300px);
+			grid-column-gap: 1rem;
+		}
+		.b {
+			grid-column: 1/3;
+		}
+	}
+	// desktop
+	@media screen and (min-width: 1050px) {
+		.banner {
+			height: 1000px;
 		}
 		.banner img {
 			height: 90%;
@@ -110,6 +128,7 @@ const HomeWrapper = styled.section`
 		}
 		.b {
 			grid-row: 1/3;
+			grid-column: 1/2;
 		}
 	}
 `;

@@ -55,10 +55,10 @@ export default About;
 const AboutWrap = styled.div`
 	width: 100%;
 	height: 100%;
-	overflow: auto;
+
 	.about-banner {
 		width: 100%;
-		height: 200px;
+		height: 300px;
 		position: relative;
 	}
 
@@ -85,9 +85,6 @@ const AboutWrap = styled.div`
 	}
 	.social-follow {
 		margin-top: 1rem;
-		// position: absolute;
-		// top: 100%;
-		// width: 100%;
 		text-align: center;
 		display: flex;
 		flex-direction: column;
@@ -123,5 +120,26 @@ const AboutWrap = styled.div`
 	}
 	li a {
 		color: #fff;
+	}
+
+	// ipad && desktop
+	@media screen and (min-width: 750px) {
+		.about-banner {
+			height: 600px;
+		}
+		.about-text {
+			max-width: 750px;
+			margin: 3rem auto;
+		}
+		.social-follow {
+			padding: 2rem;
+		}
+		.follow-txt .title {
+			font-size: 2.5rem;
+		}
+
+		.follow-txt p {
+			font-size: 3.5rem;
+		}
 	}
 `;

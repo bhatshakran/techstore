@@ -31,4 +31,22 @@ const FooterWrapper = styled.footer`
 		font-size: 1rem;
 		margin: 0;
 	}
+	// ipad
+	@media screen and (min-width: 750px) {
+		.footer-logo {
+			font-size: 3rem;
+		}
+		.footer-logo p {
+			font-size: 1.5rem;
+		}
+	}
+	// desktop
+	@media screen and (min-width: 1050px) {
+		.footer-logo {
+			font-size: 3.5rem;
+		}
+		.footer-logo p {
+			font-size: 1.8rem;
+		}
+	}
 `;
