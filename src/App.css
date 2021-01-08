@@ -9,6 +9,13 @@
 .container {
 	padding: 0;
 }
+
+.title {
+	width: 100%;
+	text-align: center;
+	margin: 2rem auto;
+	font-size: 4rem;
+}
 /* ipad */
 @media screen and (min-width: 500px) {
 	.full .full {

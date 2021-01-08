@@ -7,6 +7,7 @@ import ear from '../images/b.jpg';
 import tech from '../images/c.jpg';
 import Footer from '../components/Footer';
 import Featured from '../components/Featured';
+import Services from '../components/Services';
 
 export default function Home() {
 	return (
@@ -18,6 +19,7 @@ export default function Home() {
 							<div className='banner'>
 								<img src={heroPic} alt='' />
 								<h2>Cool Gadgets and Techy stuff</h2>
+								<div className='line'></div>
 							</div>
 							<div className='banner2'>
 								<div className='images'>
@@ -26,6 +28,7 @@ export default function Home() {
 									<img src={ear} alt='' className='b' />
 								</div>
 							</div>
+							<Services />
 							<Featured />
 							<Footer />
 						</HomeWrapper>
@@ -51,15 +54,22 @@ const HomeWrapper = styled.section`
 	}
 	.banner h2 {
 		width: calc(100% - 4rem);
-		height: 50px;
+
 		margin: 1rem 2rem;
-		font-size: 1.5rem;
+		margin-bottom: 0;
+		font-size: 2rem;
 		padding: 1rem;
 		font-family: 'Bungee';
 		color: black;
 		text-align: center;
-		border: 3px solid #f2a3bd;
+
 		text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	}
+	.line {
+		height: 5px;
+		width: 30%;
+		background: orange;
+		margin: 0 auto;
 	}
 	.banner2 {
 		width: calc(100% - 2rem);
@@ -109,7 +119,7 @@ const HomeWrapper = styled.section`
 		}
 	}
 	// desktop
-	@media screen and (min-width: 1050px) {
+	@media screen and (min-width: 1024px) {
 		.banner {
 			height: 1000px;
 		}
@@ -121,6 +131,10 @@ const HomeWrapper = styled.section`
 			margin: 3rem auto;
 			font-size: 2.5rem;
 			padding: 1rem;
+			height: 30px;
+		}
+		.line {
+			width: 20%;
 		}
 		.banner2 .images {
 			grid-template-columns: repeat(2, 25%);
