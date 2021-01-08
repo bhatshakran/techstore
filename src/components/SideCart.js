@@ -6,7 +6,7 @@ const SideCart = () => {
 	return (
 		<ProductConsumer>
 			{value => {
-				const { cartOpen, closeCart, cart } = value;
+				const { cartOpen, closeCart } = value;
 				return (
 					<CartWrapper show={cartOpen} onClick={closeCart}>
 						<p>Cart item</p>

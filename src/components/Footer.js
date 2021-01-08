@@ -6,7 +6,7 @@ const Footer = () => {
 		<FooterWrapper>
 			<div className='footer-logo'>
 				Tech <span>Buddy</span>
-				<p>Copyright 2021&#169;</p>
+				<p>Copyright 2021&#169;All Rights Reserved</p>
 				<p> Bhat Shaqran</p>
 			</div>
 		</FooterWrapper>

@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
     "aos": "^2.3.4",
+    "contentful": "^8.1.7",
     "framer-motion": "^3.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

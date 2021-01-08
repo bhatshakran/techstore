@@ -54,13 +54,14 @@ const Sidebar = () => {
 export default Sidebar;
 
 const SideWrapper = styled.section`
-	position: absolute;
+	position: fixed;
 	top: 70px;
-	width: 100%;
+	width: 50%;
 	left: 0;
 	background: white;
 	padding: 1rem;
 	z-index: 999;
+	border: 2px solid orange;
 	transform: ${props => (props.show ? 'translateX(0)' : 'translateX(-100%)')};
 	height: 100%;
 	ul {

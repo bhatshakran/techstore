@@ -7,11 +7,45 @@ class ProductProvider extends Component {
 	state = {
 		sidebarOpen: false,
 		cartOpen: false,
-		cartItems: 2,
 		links: linkData,
 		cart: [],
+		cartItems: 0,
+		cartSubTotal: 0,
+		cartTax: 0,
+		carTotal: 0,
+		storeProducts: [],
+		filteredProducts: [],
+		featuredProducts: [],
+		singleProduct: {},
+		loading: false,
 	};
+	async componentDidMount() {
+		const contentful = require('contentful');
+		const client = contentful.createClient({
+			space: 'l9qdjfpc8vvd',
+			accessToken: 'kqFK1FtE39BzI6enKVKgczj7b54UCTmHJCxqAIrfDpM',
+		});
+		const response = await client.getEntries({
+			content_type: 'techstore',
+		});
+		this.setProducts(response.items);
+	}
 
+	// setProducts
+
+	setProducts = products => {
+		let storeProducts = products.map(item => {
+			const { id } = item.sys.id;
+			const product = { id, ...item.fields };
+			return product;
+		});
+		let featuredProducts = storeProducts.filter(item => item.featured);
+		this.setState({
+			storeProducts,
+			filteredProducts: storeProducts,
+			featuredProducts,
+		});
+	};
 	// handle sidebar
 	handleSidebar = () => {
 		console.log('clicked');
@@ -48,6 +82,9 @@ class ProductProvider extends Component {
 					openCart: this.state.openCart,
 					closeCart: this.state.closeCart,
 					links: this.state.links,
+					storeProducts: this.state.storeProducts,
+					featuredProducts: this.state.featuredProducts,
+					filteredProducts: this.state.filteredProducts,
 				}}>
 				{this.props.children}
 			</ProductContext.Provider>

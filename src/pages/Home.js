@@ -6,6 +6,7 @@ import comp from '../images/a.jpg';
 import ear from '../images/b.jpg';
 import tech from '../images/c.jpg';
 import Footer from '../components/Footer';
+import Featured from '../components/Featured';
 
 export default function Home() {
 	return (
@@ -25,6 +26,7 @@ export default function Home() {
 									<img src={ear} alt='' className='b' />
 								</div>
 							</div>
+							<Featured />
 							<Footer />
 						</HomeWrapper>
 					);
@@ -74,7 +76,6 @@ const HomeWrapper = styled.section`
 		align-items: center;
 	}
 	.banner2 img {
-		background: #0000aa;
 		height: 100%;
 		width: 100%;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3), 0px -4px 4px rgba(0, 0, 0, 0.3);

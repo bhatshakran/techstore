@@ -31,13 +31,20 @@ export default function Navbar() {
 				const { cartItems, handleSidebar, handleCart } = value;
 				return (
 					<NavWrapper data-aos='fade-down'>
-						<motion.div>
+						<motion.div
+							variants={iconVariant}
+							animate='visible'
+							whileHover='hover'>
 							<FaBars className='nav-icon' onClick={handleSidebar} />
 						</motion.div>
 						<div className='nav-bran'>
 							Tech <span>Buddy</span>{' '}
 						</div>
-						<motion.div className='nav-icon'>
+						<motion.div
+							className='nav-icon'
+							variants={iconVariant}
+							animate='visible'
+							whileHover='hover'>
 							<FaCartPlus onClick={handleCart} />
 							<p>{cartItems}</p>
 						</motion.div>
@@ -63,6 +70,7 @@ const NavWrapper = styled.nav`
 	align-items: center;
 	justify-content: center;
 	z-index: 9999;
+	border-bottom: 1px solid orange;
 	.nav-bran {
 		font-size: 2rem;
 		font-family: 'Bungee';
@@ -81,11 +89,11 @@ const NavWrapper = styled.nav`
 		position: absolute;
 		top: -5px;
 		right: -10px;
-		background: #800020;
+		background: orange;
 		border-radius: 50%;
 		font-size: 1rem;
-		color: white;
-		padding: 4px;
+		color: black;
+		padding: 5px;
 	}
 	span {
 		color: orange;
