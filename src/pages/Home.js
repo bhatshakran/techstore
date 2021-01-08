@@ -100,8 +100,8 @@ const HomeWrapper = styled.section`
 			height: 90%;
 		}
 		.banner2 .images {
-			grid-template-columns: repeat(2, 38%);
-			grid-template-rows: repeat(2, 300px);
+			grid-template-columns: repeat(2, 25%);
+			grid-template-rows: repeat(2, 200px);
 			grid-column-gap: 1rem;
 		}
 		.b {
@@ -123,8 +123,8 @@ const HomeWrapper = styled.section`
 			padding: 1rem;
 		}
 		.banner2 .images {
-			grid-template-columns: repeat(2, 38%);
-			grid-template-rows: repeat(2, 300px);
+			grid-template-columns: repeat(2, 25%);
+			grid-template-rows: repeat(2, 200px);
 			grid-column-gap: 1rem;
 		}
 		.b {

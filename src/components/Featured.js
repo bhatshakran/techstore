@@ -8,14 +8,14 @@ const Featured = () => {
 		<FeaturedWrapper>
 			<h3>Featured Products</h3>
 			<div className='line'></div>
-			<div className='grid'>
+			<div className='grid full'>
 				<ProductConsumer>
 					{value => {
 						const { featuredProducts } = value;
 						console.log(featuredProducts);
 
 						return featuredProducts.map(item => {
-							return <ProductCard key={item.id} product={item} />;
+							return <ProductCard product={item} key={item.id} />;
 						});
 					}}
 				</ProductConsumer>
@@ -46,5 +46,34 @@ const FeaturedWrapper = styled.section`
 		grid-template-rows: repeat(3, 1fr);
 		grid-row-gap: 3rem;
 		justify-content: center;
+	}
+
+	// ipad view
+	@media screen and (min-width: 500px) {
+		.grid {
+			width: 100%;
+			grid-template-columns: repeat(2, 230px);
+			grid-template-rows: repeat(2, 1fr);
+			grid-column-gap: 2rem;
+		}
+		h3 {
+			font-size: 4rem;
+		}
+	}
+	// desktop view
+	@media screen and (min-width: 1024px) {
+		margin-top: 8rem;
+		.grid {
+			width: 100%;
+			grid-template-columns: repeat(3, 300px);
+			grid-template-rows: repeat(1, 1fr);
+			grid-column-gap: 3rem;
+		}
+		.line {
+			width: 30%;
+		}
+		h3 {
+			font-size: 5rem;
+		}
 	}
 `;

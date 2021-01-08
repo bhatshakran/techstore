@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaSearch, FaCartPlus } from 'react-icons/fa';
 
-const ProductCard = ({ product }) => {
+const ProductCard = props => {
+	const { product } = props;
 	const { images, name, price } = product;
 	return (
-		<ProductWrapper>
+		<ProductWrapper className={product.id === 1 ? 'full' : ''}>
 			<img src={images[0].fields.file.url} alt={name} />
 			<p>{name}</p>
 
@@ -24,6 +25,7 @@ const ProductWrapper = styled.article`
 	height: 100%;
 	position: relative;
 	background: white;
+	transition: all 0.3s linear;
 	box-shadow: 5px 3px 3px rgba(0, 0, 0, 0.3), 0px -3px 3px rgba(0, 0, 0, 0.3);
 
 	img {
@@ -67,6 +69,25 @@ const ProductWrapper = styled.article`
 
 		.icons {
 			display: block;
+		}
+	}
+
+	// ipad
+	@media screen and (min-width: 500px) {
+		.icons {
+			position: absolute;
+			top: 70%;
+			width: 100%;
+			display: none;
+		}
+	}
+	// desktop
+	@media screen and (min-width: 1024px) {
+		.icons {
+			position: absolute;
+			top: 50%;
+			width: 100%;
+			display: none;
 		}
 	}
 `;
