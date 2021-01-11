@@ -8,7 +8,7 @@ import { FaCartPlus, FaReact } from 'react-icons/fa';
 
 const Product = props => {
 	useEffect(() => {
-		// window.scrollTo(0, 0);
+		window.scrollTo(0, 0);
 	}, []);
 
 	return (
