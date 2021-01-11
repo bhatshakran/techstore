@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 :root {
 	font-family: 'Poppins' !important;
 	margin: 0;
 	padding: 0;
 }
-
+a {
+	color: black;
+}
 .container {
 	padding: 0;
 }
@@ -14,13 +17,16 @@
 	width: 100%;
 	text-align: center;
 	margin: 2rem auto;
-	font-size: 4rem;
+	font-size: 3rem;
 }
 /* ipad */
 @media screen and (min-width: 500px) {
 	.full .full {
 		grid-column: 1/3;
 		grid-row: 2/3;
+	}
+	.title {
+		font-size: 4rem;
 	}
 }
 /* desktop */

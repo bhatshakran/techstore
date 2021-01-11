@@ -17,7 +17,7 @@ class ProductProvider extends Component {
 		filteredProducts: [],
 		featuredProducts: [],
 		singleProduct: {},
-		loading: false,
+		loading: true,
 	};
 	async componentDidMount() {
 		const contentful = require('contentful');
@@ -72,6 +72,23 @@ class ProductProvider extends Component {
 			cartOpen: true,
 		});
 	};
+	// set Single Product
+	setSingleProduct = id => {
+		console.log('clicked');
+		let product = this.state.storeProducts.find(item => item.id === id);
+		localStorage.setItem('singleProduct', JSON.stringify(product));
+		this.setState({
+			singleProduct: product,
+			loading: false,
+		});
+	};
+
+	// get single product
+	getSingleProduct = () => {
+		return localStorage.getItem('singleProduct')
+			? JSON.parse(localStorage.getItem('singleProduct'))
+			: {};
+	};
 	render() {
 		return (
 			<ProductContext.Provider
@@ -79,12 +96,10 @@ class ProductProvider extends Component {
 					...this.state,
 					handleSidebar: this.handleSidebar,
 					handleCart: this.handleCart,
-					openCart: this.state.openCart,
-					closeCart: this.state.closeCart,
-					links: this.state.links,
-					storeProducts: this.state.storeProducts,
-					featuredProducts: this.state.featuredProducts,
-					filteredProducts: this.state.filteredProducts,
+					openCart: this.openCart,
+					closeCart: this.closeCart,
+					setSingleProduct: this.setSingleProduct,
+					getSingleProduct: this.getSingleProduct,
 				}}>
 				{this.props.children}
 			</ProductContext.Provider>
@@ -94,4 +109,4 @@ class ProductProvider extends Component {
 
 const ProductConsumer = ProductContext.Consumer;
 
-export { ProductProvider, ProductConsumer };
+export { ProductProvider, ProductConsumer, ProductContext };

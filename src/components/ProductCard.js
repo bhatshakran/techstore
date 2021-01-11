@@ -1,20 +1,37 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { FaSearch, FaCartPlus } from 'react-icons/fa';
+import { ProductConsumer } from '../context';
 
 const ProductCard = props => {
 	const { product } = props;
-	const { images, name, price } = product;
+
+	const { images, name, price, id } = product;
+
 	return (
 		<ProductWrapper className={product.id === 1 ? 'full' : ''}>
 			<img src={images[0].fields.file.url} alt={name} />
 			<p>{name}</p>
 
 			<p className='price-tag'>{price}$</p>
-			<div className='icons'>
-				<FaSearch className='a' />
-				<FaCartPlus className='b' />
-			</div>
+			<ProductConsumer>
+				{value => {
+					return (
+						<div className='icons'>
+							<Link
+								to={`/products/${product.name}`}
+								onClick={() => {
+									value.setSingleProduct(id);
+									value.getSingleProduct(id);
+								}}>
+								<FaSearch className='a' />
+							</Link>
+							<FaCartPlus className='b' />
+						</div>
+					);
+				}}
+			</ProductConsumer>
 		</ProductWrapper>
 	);
 };

@@ -6,13 +6,12 @@ import ProductCard from './ProductCard';
 const Featured = () => {
 	return (
 		<FeaturedWrapper>
-			<h3>Featured Products</h3>
+			<h2>Featured Products</h2>
 			<div className='line'></div>
 			<div className='grid full'>
 				<ProductConsumer>
 					{value => {
 						const { featuredProducts } = value;
-						console.log(featuredProducts);
 
 						return featuredProducts.map(item => {
 							return <ProductCard product={item} key={item.id} />;
@@ -72,7 +71,7 @@ const FeaturedWrapper = styled.section`
 		.line {
 			width: 30%;
 		}
-		h3 {
+		h2 {
 			font-size: 5rem;
 		}
 	}

@@ -73,7 +73,7 @@ const HomeWrapper = styled.section`
 	}
 	.banner2 {
 		width: calc(100% - 2rem);
-		margin: 3rem 1rem;
+		margin: 7rem 1rem;
 	}
 	.banner2 .images {
 		padding: 1rem;
