@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProductConsumer } from '../context';
-import heroPic from '../images/pexels-sound-on-3756853.jpg';
+import heroPic from '../images/heroPic.jpg';
 import styled from 'styled-components';
 import comp from '../images/a.jpg';
 import ear from '../images/b.jpg';
