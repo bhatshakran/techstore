@@ -62,7 +62,7 @@ const SideWrapper = styled.section`
 	padding: 1rem;
 	z-index: 999;
 	border: 2px solid orange;
-	transform: ${props => (props.show ? 'translateX(0)' : 'translateX(-100%)')};
+	transform: ${props => (props.show ? 'translateX(0)' : 'translateX(-120%)')};
 	height: 100%;
 	ul {
 		display: flex;
