@@ -89,11 +89,14 @@ const NavWrapper = styled.nav`
 		position: absolute;
 		top: -5px;
 		right: -10px;
+		width: 20px;
+		height: 20px;
 		background: orange;
 		border-radius: 50%;
 		font-size: 1rem;
 		color: black;
-		padding: 5px;
+		padding-top: 13%;
+		text-align: center;
 	}
 	span {
 		color: orange;

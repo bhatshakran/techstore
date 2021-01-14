@@ -6,7 +6,7 @@ const CartItem = ({ item }) => {
 			<div className='img-container'>
 				<img src={item.images[0].fields.file.url} alt='' />
 			</div>
-			<h3>Product name:{item.name}</h3>
+			<h3>Product:{item.name}</h3>
 			<h5>Amount: {item.count}</h5>
 		</CartItemWrapper>
 	);

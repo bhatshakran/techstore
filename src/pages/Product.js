@@ -18,7 +18,7 @@ const Product = () => {
 					return <div>Loading...</div>;
 				} else {
 					const { singleProduct } = value;
-					console.log(singleProduct);
+
 					const { features } = singleProduct;
 
 					const mainImg = singleProduct.images[0].fields.file.url;
@@ -82,8 +82,10 @@ const Product = () => {
 								<div className='line'></div>
 								<div className='pictures'>{pics}</div>
 								<div className='cta'>
-									<button className='btn-cart'>
-										<FaCartPlus className='cart-icon' />
+									<button
+										className='btn-cart'
+										onClick={() => value.addToCart(singleProduct.id)}>
+										<FaCartPlus className='cart-i' />
 										Add to cart
 									</button>
 								</div>

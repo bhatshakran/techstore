@@ -54,8 +54,12 @@ a {
 	align-items: Center;
 	text-align: center;
 }
+
 .col-1 {
 	display: none;
+}
+.col-1 img {
+	height: 50px;
 }
 .col-5 {
 	padding: 0;
@@ -82,7 +86,8 @@ a {
 	padding: 0;
 }
 
-.btn-clear {
+.btn-clear,
+.btn-back {
 	margin: 1rem auto;
 	border: none;
 	background: cornflowerblue;
@@ -92,9 +97,16 @@ a {
 	padding: 1rem;
 	transition: all 0.3s linear;
 	font-size: 1.7rem;
+	text-decoration: none;
 }
-
-.btn-clear:hover {
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+.btn-clear:hover,
+.btn-back:hover {
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -109,4 +121,17 @@ a {
 
 .cart-icon:hover {
 	background: darkblue;
+}
+/* ipad */
+@media screen and (min-width: 500px) {
+	.col-1 {
+		display: block;
+	}
+	.row-head,
+	.cart-row {
+		grid-template-columns: repeat(6, 130px);
+		grid-template-rows: repeat(auto-fit, 60px);
+		grid-column-gap: 2rem;
+		font-size: 1.7rem;
+	}
 }

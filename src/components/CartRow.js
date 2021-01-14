@@ -7,13 +7,17 @@ import {
 import { ProductConsumer } from '../context';
 
 const CartRow = ({ item }) => {
-	const { name, price, count, total, id } = item;
+	console.log(item);
+	const { name, price, count, total, id, images } = item;
 	return (
 		<ProductConsumer>
 			{value => {
 				const { increment, removeItem, decrement } = value;
 				return (
 					<>
+						<div className='col-1'>
+							<img src={images[0].fields.file.url} alt='' />
+						</div>
 						<div className='col-2'>{name}</div>
 						<div className='col-3'>{price}$</div>
 						<div className='col-4'>

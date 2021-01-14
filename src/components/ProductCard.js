@@ -68,8 +68,12 @@ const ProductWrapper = styled.article`
 		transform: scale(2);
 		margin: 0 2rem;
 		cursor: pointer;
+		color: black;
 	}
-
+	.a:hover,
+	.b:hover {
+		color: orange;
+	}
 	.price-tag {
 		margin: 1rem auto;
 		background: orange;

@@ -31,7 +31,7 @@ const FeaturedWrapper = styled.section`
 	text-align: center;
 
 	.line {
-		width: 60%;
+		width: 70px;
 		height: 5px;
 		background: orange;
 		margin: 0 auto;
@@ -62,15 +62,14 @@ const FeaturedWrapper = styled.section`
 	// desktop view
 	@media screen and (min-width: 1024px) {
 		margin-top: 8rem;
+		margin-bottom: 20vh;
 		.grid {
 			width: 100%;
 			grid-template-columns: repeat(3, 300px);
 			grid-template-rows: repeat(1, 1fr);
 			grid-column-gap: 3rem;
 		}
-		.line {
-			width: 30%;
-		}
+
 		h2 {
 			font-size: 5rem;
 		}

@@ -220,6 +220,19 @@ class ProductProvider extends Component {
 			}
 		);
 	};
+	// clear cart
+	clearCart = () => {
+		let tempCart = [];
+		this.setState(
+			{
+				cart: [...tempCart],
+			},
+			() => {
+				this.addTotals();
+				this.syncStorage();
+			}
+		);
+	};
 	render() {
 		return (
 			<ProductContext.Provider
@@ -235,6 +248,7 @@ class ProductProvider extends Component {
 					increment: this.increment,
 					decrement: this.decrement,
 					removeItem: this.removeItem,
+					clearCart: this.clearCart,
 				}}>
 				{this.props.children}
 			</ProductContext.Provider>

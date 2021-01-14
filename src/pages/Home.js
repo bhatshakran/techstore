@@ -67,7 +67,7 @@ const HomeWrapper = styled.section`
 	}
 	.line {
 		height: 5px;
-		width: 30%;
+		width: 70px;
 		background: orange;
 		margin: 0 auto;
 	}
@@ -133,9 +133,7 @@ const HomeWrapper = styled.section`
 			padding: 1rem;
 			height: 30px;
 		}
-		.line {
-			width: 20%;
-		}
+
 		.banner2 .images {
 			grid-template-columns: repeat(2, 25%);
 			grid-template-rows: repeat(2, 200px);
