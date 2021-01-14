@@ -6,7 +6,7 @@ import _ from 'lodash';
 import { FiPlus } from 'react-icons/fi';
 import { FaCartPlus, FaReact } from 'react-icons/fa';
 
-const Product = props => {
+const Product = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -14,79 +14,83 @@ const Product = props => {
 	return (
 		<ProductConsumer>
 			{value => {
-				const { singleProduct } = value;
-				const { features } = singleProduct;
+				if (value.loading) {
+					return <div>Loading...</div>;
+				} else {
+					const { singleProduct } = value;
+					console.log(singleProduct);
+					const { features } = singleProduct;
 
-				const mainImg = singleProduct.images[0].fields.file.url;
-				// convert object to array
-				const featuresArray = Object.keys(features).map(k => ({
-					[k]: features[k],
-				}));
-				console.log(singleProduct);
+					const mainImg = singleProduct.images[0].fields.file.url;
+					// convert object to array
+					const featuresArray = Object.keys(features).map(k => ({
+						[k]: features[k],
+					}));
 
-				// get pics
-				const pics = singleProduct.images.map(pic => {
+					// get pics
+					const pics = singleProduct.images.map(pic => {
+						return (
+							<img key={pic.fields.title} src={pic.fields.file.url} alt='' />
+						);
+					});
+
+					const featuresList = featuresArray.map(feature => {
+						return (
+							<li key={_.uniqueId('Key_')}>
+								{JSON.stringify(feature).slice(1, -1).replace(/"/g, '')}
+							</li>
+						);
+					});
+
 					return (
-						<img key={pic.fields.title} src={pic.fields.file.url} alt='' />
-					);
-				});
-
-				const featuresList = featuresArray.map(feature => {
-					return (
-						<li key={_.uniqueId('Key_')}>
-							{JSON.stringify(feature).slice(1, -1).replace(/"/g, '')}
-						</li>
-					);
-				});
-
-				return (
-					<ProductWrapper
-						style={{
-							background: `url(${productbg})`,
-							backgroundSize: 'cover',
-							backgroundPosition: 'center',
-							backgroundRepeat: 'no-repeat',
-							backgroundAttachment: 'fixed',
-						}}>
-						<div className='img-container'>
-							<img src={mainImg} alt='' />
-						</div>
-						<div className='circles'>
-							<div className='circle-outer'>
-								<FiPlus className='icon' />
-								<FaReact className='center-icon' />
-								<p>{singleProduct.name}</p>
-								<div className='circle-inner'>
-									<p>{singleProduct.category}</p>
-									<FiPlus className='icon icon-2' />
+						<ProductWrapper
+							style={{
+								background: `url(${productbg})`,
+								backgroundSize: 'cover',
+								backgroundPosition: 'center',
+								backgroundRepeat: 'no-repeat',
+								backgroundAttachment: 'fixed',
+							}}>
+							<div className='img-container'>
+								<img src={mainImg} alt='' />
+							</div>
+							<div className='circles'>
+								<div className='circle-outer'>
+									<FiPlus className='icon' />
+									<FaReact className='center-icon' />
+									<p>{singleProduct.name}</p>
+									<div className='circle-inner'>
+										<p>{singleProduct.category}</p>
+										<FiPlus className='icon icon-2' />
+									</div>
 								</div>
 							</div>
-						</div>
-						<div className='properties'>
-							<div className='prop-img-container'>
-								<img src={singleProduct.images[1].fields.file.url} alt='' />
-							</div>
-							<div className='features'>
-								<h3>{singleProduct.name}</h3>
-								<div className='line'></div>
+							<div className='properties'>
+								<div className='prop-img-container'>
+									<img src={singleProduct.images[1].fields.file.url} alt='' />
+								</div>
+								<div className='features'>
+									<h3>{singleProduct.name}</h3>
+									<div className='line'></div>
 
-								<ul>{featuresList}</ul>
+									<ul>{featuresList}</ul>
+								</div>
+								<h4>Price: ${singleProduct.price}</h4>
 							</div>
-							<h4>Price: ${singleProduct.price}</h4>
-						</div>
-						<div className='picture-container'>
-							<h3>Pictures</h3>
-							<div className='line'></div>
-							<div className='pictures'>{pics}</div>
-							<div className='cta'>
-								<button className='btn-cart'>
-									<FaCartPlus className='cart-icon' />
-									Add to cart
-								</button>
+							<div className='picture-container'>
+								<h3>Pictures</h3>
+								<div className='line'></div>
+								<div className='pictures'>{pics}</div>
+								<div className='cta'>
+									<button className='btn-cart'>
+										<FaCartPlus className='cart-icon' />
+										Add to cart
+									</button>
+								</div>
 							</div>
-						</div>
-					</ProductWrapper>
-				);
+						</ProductWrapper>
+					);
+				}
 			}}
 		</ProductConsumer>
 	);

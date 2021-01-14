@@ -23,11 +23,15 @@ const ProductCard = props => {
 								to={`/products/${product.name}`}
 								onClick={() => {
 									value.setSingleProduct(id);
-									value.getSingleProduct(id);
 								}}>
 								<FaSearch className='a' />
 							</Link>
-							<FaCartPlus className='b' />
+							<FaCartPlus
+								className='b'
+								onClick={() => {
+									value.addToCart(id);
+								}}
+							/>
 						</div>
 					);
 				}}
