@@ -18,6 +18,11 @@ class ProductProvider extends Component {
 		featuredProducts: [],
 		singleProduct: {},
 		loading: true,
+		min: 0,
+		max: 0,
+		price: 0,
+		shipping: false,
+		company: 'all',
 	};
 	async componentDidMount() {
 		const contentful = require('contentful');
@@ -233,6 +238,10 @@ class ProductProvider extends Component {
 			}
 		);
 	};
+	// handle change
+	handleChange = event => {
+		console.log(event);
+	};
 	render() {
 		return (
 			<ProductContext.Provider
@@ -249,6 +258,7 @@ class ProductProvider extends Component {
 					decrement: this.decrement,
 					removeItem: this.removeItem,
 					clearCart: this.clearCart,
+					handleChange: this.handleChange,
 				}}>
 				{this.props.children}
 			</ProductContext.Provider>
