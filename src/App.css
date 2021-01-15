@@ -123,13 +123,13 @@ a:hover {
 	background: darkblue;
 }
 /* ipad */
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 700px) {
 	.col-1 {
 		display: block;
 	}
 	.row-head,
 	.cart-row {
-		grid-template-columns: repeat(6, 130px);
+		grid-template-columns: repeat(6, 100px);
 		grid-template-rows: repeat(auto-fit, 60px);
 		grid-column-gap: 2rem;
 		font-size: 1.7rem;

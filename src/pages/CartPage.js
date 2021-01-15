@@ -136,12 +136,14 @@ const CartPageWrapper = styled.section`
 		margin: 0 auto;
 		font-family:'poppins';
 	}
-	@media screen and (min-width: 500px){
+	@media screen and (min-width: 700px){
 		.banner{
 			height:350px;
+			width: 100%;
 		}
 		.banner img{
 			height: 100%;
+			width: 100%;
 		}
 		
 		.totals > h4{
@@ -153,7 +155,7 @@ const CartPageWrapper = styled.section`
 			margin: 3rem;
 		}
 	}
-	/* desktop */
+	//  desktop 
 @media screen and (min-width: 1025px) {
 	.banner{
 		height:500px;

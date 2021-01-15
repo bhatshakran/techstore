@@ -44,7 +44,7 @@ const CartWrapper = styled.div`
 	z-index: 150;
 	font-size: 3rem;
 	width: 50%;
-	transform: ${props => (props.show ? 'translateX(0)' : 'translate(-100vw)')};
+	transform: ${props => (props.show ? 'translateX(0)' : 'translate(-500vw)')};
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
 	grid-template-rows: repeat(auto-fit, 80px);
