@@ -1,10 +1,10 @@
 import React from 'react';
 import { ProductConsumer } from '../context';
-import heroPic from '../images/heroPic.jpg';
+import heroPic from '../images/heroPic.webp';
 import styled from 'styled-components';
-import comp from '../images/a.jpg';
-import ear from '../images/b.jpg';
-import tech from '../images/c.jpg';
+import comp from '../images/a.webp';
+import ear from '../images/b.webp';
+import tech from '../images/c.webp';
 import Footer from '../components/Footer';
 import Featured from '../components/Featured';
 import Services from '../components/Services';

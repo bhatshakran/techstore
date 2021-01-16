@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React, { useEffect } from 'react';
 import { ProductConsumer } from '../context';
-import productbg from '../images/productbg.jpg';
+import productbg from '../images/productbg.webp';
 import _ from 'lodash';
 import { FiPlus } from 'react-icons/fi';
 import { FaCartPlus, FaReact } from 'react-icons/fa';

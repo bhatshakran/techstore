@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ProductConsumer } from '../context';
 import CartRow from '../components/CartRow';
-import Cart from '../images/cart.jpg';
+import Cart from '../images/cart.webp';
 import { GrClear } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
 

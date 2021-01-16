@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import banner from '../images/productsbg.jpg';
-import provec from '../images/provec.jpg';
+import banner from '../images/productsbg.webp';
+import provec from '../images/provec.webp';
 import { ProductConsumer } from '../context';
 import Filter from '../components/Filter';
 import { Link } from 'react-router-dom';

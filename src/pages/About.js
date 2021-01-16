@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { FaWhatsapp } from 'react-icons/fa';
-import pic from '../images/bady-abbas-IXvt-iL1Qlk-unsplash.jpg';
+import pic from '../images/bady-abbas-IXvt-iL1Qlk-unsplash.webp';
 
 const About = () => {
 	return (

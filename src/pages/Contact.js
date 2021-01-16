@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import contact from '../images/contact.jpg';
+import contact from '../images/contact.webp';
 
 const Contact = () => {
 	return (

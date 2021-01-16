@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ProductConsumer } from '../context';
-import provec from '../images/provec.jpg';
+import provec from '../images/provec.webp';
 
 const Filter = () => {
 	return (
