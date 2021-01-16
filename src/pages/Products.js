@@ -3,80 +3,52 @@ import styled from 'styled-components';
 import banner from '../images/productsbg.jpg';
 import provec from '../images/provec.jpg';
 import { ProductConsumer } from '../context';
+import Filter from '../components/Filter';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
 	return (
 		<ProductConsumer>
 			{value => {
-				const {
-					search,
-					company,
-					price,
-					min,
-					max,
-					handleChange,
-					shipping,
-				} = value;
+				const { setSingleProduct, filteredProducts } = value;
+
 				return (
 					<ProductsWrapper>
 						<div className='banner'>
 							<img src={banner} alt='' />
 						</div>
-						<div className='products-title'>
-							<h3>Products</h3>
+						<div className='pro-container'>
+							<div className='products-title'>
+								<h3>Products</h3>
+							</div>
 						</div>
-
-						<section className='restpart'>
-							<section className='filter'>
-								{/* text search */}
-
-								<label htmlFor='search'>Search Products</label>
-								<input
-									type='text'
-									name='search'
-									id='search'
-									value={search}
-									className='form-control'
-									placeholder='Name'
-									onChange={handleChange}
-								/>
-								{/* company */}
-								<label htmlFor='company'>Company </label>
-								<select
-									type='text'
-									name='company'
-									id='company'
-									value={company}
-									onChange={handleChange}
-									className='form-control'>
-									<option value='all'>All</option>
-									<option value='acer'>Acer</option>
-									<option value='nikon'>Nikon</option>
-									<option value='blackberry'>Blackberry</option>
-								</select>
-								{/* price range */}
-								<label htmlFor='price'>Product Price: $ {price} </label>
-								<input
-									type='range'
-									name='price'
-									id='price'
-									min={min}
-									max={max}
-									className='form-control'
-									onChange={handleChange}
-									value={price}
-								/>
-								{/* shipping */}
-								<label htmlFor='shipping'>Free Shipping</label>
-								<input
-									type='checkbox'
-									name='shipping'
-									id='shipping'
-									onChange={handleChange}
-									value={shipping && true}
-								/>
-							</section>
-						</section>
+						<Filter />
+						{/* products */}
+						<div className='products-holder'>
+							<h3>Result:</h3>
+							<div className='products'>
+								{filteredProducts.map(product => {
+									return (
+										<div className='product-card' key={product.id}>
+											<img src={product.images[0].fields.file.url} alt='' />
+											<div className='info-holder'>
+												{' '}
+												{product.name}
+												<br />
+												Price: $ {product.price} <br />
+												<Link to={`/products/${product.name}`}>
+													<button
+														className='btn-details'
+														onClick={() => setSingleProduct(product.id)}>
+														Details
+													</button>
+												</Link>
+											</div>
+										</div>
+									);
+								})}
+							</div>
+						</div>
 					</ProductsWrapper>
 				);
 			}}
@@ -88,8 +60,11 @@ export default Products;
 
 const ProductsWrapper = styled.div`
 	position: relative;
-    top: 70px;
-   
+	top: 70px;
+	background: url(${provec});
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
 	.banner {
 		width: 100%;
 		height: 250px;
@@ -98,49 +73,103 @@ const ProductsWrapper = styled.div`
 		width: 100%;
 		height: 100%;
 	}
+	.pro-container {
+		background: white;
+		margin: 0;
+		padding: 2rem;
+	}
 	.products-title {
 		font-family: 'Poppins';
-		margin: 2rem auto;
+		margin: 0 auto;
 		text-align: center;
-
 		width: 150px;
 	}
 	h3 {
 		position: relative;
 		font-weight: 800;
+		margin: 0;
 	}
-
-	.restpart {
-		background: url(${provec});
-		background-position: center;
-		background-attachment: fixed;
-		background-size: cover;
-		width: 100%;
-		color: #fff;
-        text-align: center;
-        padding-top: 50vh;
-    }
-    .filter{
-       
-        background:#fff;
-    }
-	label {
-        margin: 4rem 0;
-        margin-bottom: 0;
-		font-size: 2rem;
+	.products-holder{
+		
+		background: #fff;
+		padding-top: 4rem;
+		text-align:Center;
 		font-family: 'Poppins';
-        color: black;
-        padding: 1rem;
-        width:calc(100% - 2rem);
 		
 	}
-	input, select {
-        height: 40px;
-        width:calc(100% - 2rem);
-		border: 1px solid #ececec;
-        margin: 1rem auto;
-        font-weight:bold;
-        outline:none;
-        border-radius:0;
-       
+	.products-holder h3{
+		font-size: 4rem;
+	}
+	.products {
+		
+		margin-top: 2rem;
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(1, 270px);
+		grid-template-rows: repeat(auto-fit, 250px);
+		justify-content: center;
+		text-align: center;
+		grid-row-gap: 3rem;
+		padding-bottom: 3rem;
+	}
+	
+	.product-card {
+		display: grid;
+		grid-template-columns: repeat(1, 100%);
+		grid-template-rows: repeat(2, 120px);
+		text-align:center;
+		padding-top: 2rem;
+		
+		box-shadow: 0px 2px 7px rgba(0,0,0,0.4), 0px -2px 7px rgba(0,0,0,0.4);
+
+	}
+
+	.product-card img {
+		height: 90px;
+        width: 50px
+		grid-row: 1/2;
+		margin: 0 auto;
+	}
+.info-holder{
+	color: maroon;
+	font-size: 1.8rem;
+	font-family: 'Poppins';
+	
+}
+	.btn-details{
+		padding: 1rem;
+		border: 0;
+		background: cornflowerblue;
+		color: #fff;
+		margin-top: 1rem;
+		opacity: 0.8;
+		transition: all 0.3s linear;
+	}
+	.btn-details:hover{
+		background: darkblue;
+		opacity: 1;
+	}
+	//  ipad
+	@media screen and (min-width: 700px){
+		.banner{
+			height: 400px;
+		}
+		.products{
+			grid-template-columns: repeat(2, 300px);
+			grid-template-rows: repeat(2, 300px);
+			grid-column-gap: 3rem;
+		}
+	}
+	// desktop
+	@media screen and (min-width: 1025px){
+		.banner{
+			height: 600px;
+		}
+		.products{
+			
+			grid-template-columns: repeat(auto-fit, 300px);
+			grid-template-rows: repeat(auto-fit, 300px);
+			grid-column-gap: 3rem;
+		}
+	}
 `;

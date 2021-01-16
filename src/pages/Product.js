@@ -236,7 +236,7 @@ const ProductWrapper = styled.section`
 		font-family: 'Poppins';
 	}
 	.circle-inner p {
-		right: -5px;
+		right: -30px;
 		top: 65px;
 	}
 	.center-icon {
